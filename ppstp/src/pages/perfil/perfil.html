@@ -1,0 +1,76 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PERFIL</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header text-center>
+            
+          Datos de usuario
+          
+        </ion-card-header>
+  
+        <ion-card-content>
+            <br>
+            <ion-item>
+              <h2>Correo: {{user.mail}}</h2>
+              <br>
+              <h2>Contraseña: {{user.password}}</h2>
+              
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-label>Foto</ion-label>                
+                <ion-input type="file" id="file" name="file"></ion-input>
+            </ion-item>
+            <br>
+              <ion-item>
+                  <ion-label>Usuario</ion-label>
+                  <ion-input clearInput type="email"[attr.maxlength]="15"  [(ngModel)]="perfil.usuario"></ion-input>
+                </ion-item>
+              <br>
+                <ion-item>
+                    
+                  <ion-label>Edad</ion-label>
+                  <ion-input clearInput clearOnEdit="false" [attr.maxlength]="10" type="number" [(ngModel)]="perfil.edad"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-label>Perfil</ion-label>
+                    <ion-select [(ngModel)]="perfil.perfil">
+                      <ion-option value="invitado" >Invitado</ion-option>
+                      <ion-option value="admin">Administrador</ion-option>
+                      <ion-option value="usuario">Usuario</ion-option>
+                      <ion-option value="jugador">Jugador</ion-option>                      
+                    </ion-select>
+                  </ion-item>
+                <br>
+                  <ion-item>
+                      <ion-label>Sexo</ion-label>
+                      <ion-select [(ngModel)]="perfil.sexo">
+                        <ion-option value="female">Femenino</ion-option>
+                        <ion-option value="male">Masculino</ion-option>
+                        <ion-option value="nose">Indefinido</ion-option>                        
+                      </ion-select>
+                    </ion-item>
+                    <br>
+    
+                <ion-item >
+                    <button ion-button  style="font-size:15px; width:100%" (click)="editar()" float-right> EDITAR </button>    
+                </ion-item> 
+          </ion-card-content>
+    </ion-card>
+
+</ion-content>
